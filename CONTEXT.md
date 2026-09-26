@@ -50,9 +50,25 @@ _Avoid_: Chat id, thread key
 The captured artefact exactly as received, never modified, never rewritten, never deleted. Everything the project derives lives somewhere else and can be rebuilt from this.
 _Avoid_: Raw data, source of truth, original file
 
+**Content digest**:
+A fingerprint of an export's logical contents — its entries and their bytes — independent of the container's own metadata, so re-exporting the same chat yields the same digest.
+_Avoid_: Content hash, checksum, file hash
+
+**Artifact hash**:
+A fingerprint of the export file exactly as received, container metadata included. It proves the held file is unchanged, where the content digest proves what it contains.
+_Avoid_: Zip hash, container hash
+
 **Provenance**:
 The recorded facts about where a capture came from and when, kept beside the raw evidence so a capture can be explained years later without guessing.
 _Avoid_: Metadata, audit log
+
+**Capture time**:
+When the export was brought onto the host and preserved. The store orders captures by it.
+_Avoid_: Import time, download time
+
+**Export time**:
+When the messaging app wrote the export, as recorded in the export itself. It is device-local wall-clock with no reliable offset, so it is a record of when, not an instant.
+_Avoid_: Snapshot time, created time
 
 **Store**:
 The local, append-only home of raw evidence and its provenance. It is the user's archive, and it grows; nothing in it is ever thrown away by the project.
