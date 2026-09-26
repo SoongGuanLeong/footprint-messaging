@@ -32,6 +32,10 @@ _Avoid_: Import, sync, ingestion
 The title a person reads in the app's chat list, and the only handle a user or tool can act on to select a chat. It is also what the app puts in the export filename. It is chosen by the people in the chat, is not unique, and can change at any time.
 _Avoid_: Chat title, thread name, conversation id
 
+**Stated chat name**:
+The name the user gives on the capture command to say which chat was exported. It is a claim, not a fact: it is checked against the chat name WhatsApp wrote, and when the two disagree the chat name wins.
+_Avoid_: Target chat, chat argument, requested chat
+
 **Sender label**:
 The name written beside each message inside a transcript. It is the sender's app profile name, which is a different thing from the chat name: a chat carries both at once, and the two routinely disagree.
 _Avoid_: Author, participant, sender name
