@@ -11,7 +11,7 @@ The phone the person actually uses day to day, holding the account's full histor
 _Avoid_: Real phone, main phone, original device
 
 **Linked companion device**:
-A second device linked to the same account, which receives new traffic from the moment of linking and is not the account's holder of record.
+A second device linked to the same account. It is not the account's holder of record, but it is not a pure forwarder either: at link time the primary device pushes it a partial copy of the most recent history, and it receives new traffic from then on.
 _Avoid_: Secondary device, emulator device, slave device
 
 **Capture source**:
