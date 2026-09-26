@@ -28,6 +28,10 @@ _Avoid_: Backup, dump, download
 One export of one named chat, taken and brought to the host, together with everything needed to know where it came from. A capture is the unit of work; an export is only the file inside it.
 _Avoid_: Import, sync, ingestion
 
+**Capture identity**:
+A capture's identity is its content digest. Two captures are the same capture exactly when their bytes agree, so novelty is decided by one comparison and never by reading messages.
+_Avoid_: Capture id, version key, fingerprint
+
 **Chat name**:
 The title a person reads in the app's chat list, and the only handle a user or tool can act on to select a chat. It is also what the app puts in the export filename. It is chosen by the people in the chat, is not unique, and can change at any time.
 _Avoid_: Chat title, thread name, conversation id
@@ -41,7 +45,7 @@ The name written beside each message inside a transcript. It is the sender's app
 _Avoid_: Author, participant, sender name
 
 **Chat identity**:
-Whatever lets the store tell two captures of the same conversation apart from captures of different ones, given that the chat name cannot. Deliberately not the same concept as chat name.
+Whatever lets two captures be recognised as the same conversation. Deliberately not the same concept as chat name, and deliberately not computed by the store: the archive carries no stable identifier, so this is a derived-layer concern built from the recorded names.
 _Avoid_: Chat id, thread key
 
 ### Preserving
@@ -57,6 +61,10 @@ _Avoid_: Content hash, checksum, file hash
 **Artifact hash**:
 A fingerprint of the export file exactly as received, container metadata included. It proves the held file is unchanged, where the content digest proves what it contains.
 _Avoid_: Zip hash, container hash
+
+**Duplicate**:
+A capture whose content digest already exists in the store. It is not written; the store holds evidence about the chat, not a log of runs.
+_Avoid_: Repeated capture, re-run
 
 **Provenance**:
 The recorded facts about where a capture came from and when, kept beside the raw evidence so a capture can be explained years later without guessing.
