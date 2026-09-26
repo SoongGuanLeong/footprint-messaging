@@ -15,7 +15,7 @@ A second device linked to the same account. It is not the account's holder of re
 _Avoid_: Secondary device, emulator device, slave device
 
 **Capture source**:
-The device an export is actually taken from. A capture source is not fixed: it may be the primary device, a linked companion device, or both at different times.
+The device an export is actually taken from. It is not necessarily the device that holds the account's history, and for this project it is not.
 _Avoid_: Source device, origin
 
 ### Acquiring
