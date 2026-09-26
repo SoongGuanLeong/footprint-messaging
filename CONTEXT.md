@@ -70,6 +70,10 @@ _Avoid_: Import time, download time
 When the messaging app wrote the export, as recorded in the export itself. It is device-local wall-clock with no reliable offset, so it is a record of when, not an instant.
 _Avoid_: Snapshot time, created time
 
+**Coverage**:
+What a capture can vouch for about the chat it came from, as distinct from what the capture contains. A capture is evidence of its own contents and never a claim about the chat, so coverage is never asserted.
+_Avoid_: Completeness, fullness
+
 **Store**:
 The local, append-only home of raw evidence and its provenance. It is the user's archive, and it grows; nothing in it is ever thrown away by the project.
 _Avoid_: Database, repository, vault
